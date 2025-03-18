@@ -9,6 +9,8 @@ export default function Profile() {
             <Button>Clique</Button>
 
             <Image style={{width: 200, height: 200}} source={require('../assets/arma3.jpg')}/>
+
+            <Image style={{width: 200, height: 200}} source={require('../assets/war_thunder.png')}/>
         </View>
     )
 }

@@ -1,0 +1,2 @@
+1 - Editar as variáveis de ambiente, porque o acesso foi somente colocado do ADMIN
+2 - 
