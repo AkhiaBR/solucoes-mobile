@@ -12,34 +12,16 @@ import Login from './Screens/Login.js';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Entypo from '@expo/vector-icons/Entypo'; // importa icone
 
 
-export default function App() {
+export default function Bottom() {
   const BottomTab = createBottomTabNavigator();
 
   return ( // somente um NavigationContainer por projeto
     <NavigationContainer> 
-      <BottomTab.Navigator
-      screenOptions={{
-        headerStyle : {backgroundColor: "purple"}, 
-        headerTintColor: 'white',
-        tabBarActiveBackgroundColor: '#DA70D6',
-        tabBarInactiveBackgroundColor : 'purple',
-      }}
-      >
-        <BottomTab.Screen name='Login' component={Login} 
-        options={{
-          tabBarIcon: () =>
-            <Entypo name="login" size={24} color="black" />
-        }}
-        />
-        <BottomTab.Screen name='Home' component={Home}
-        options={{
-          tabBarIcon: () =>
-            <Entypo name="home" size={24} color="black" />
-        }}
-        />
+      <BottomTab.Navigator>
+        <BottomTab.Screen name='Login' component={Login}/>
+        <BottomTab.Screen name='Home' component={Home}/>
       </BottomTab.Navigator>
     </NavigationContainer>
   );
