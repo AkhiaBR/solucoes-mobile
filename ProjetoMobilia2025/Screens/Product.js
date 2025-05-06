@@ -1,5 +1,6 @@
 import { Text, View, StyleSheet, FlatList, Image } from "react-native";
 import { useState } from "react";
+import CardProduct from "./CardProduct";
 
 export default function Product () {
     const [produtos, setProdutos] = useState([ // tem [] porque é um array e {} porque é um dicionário
@@ -24,10 +25,12 @@ export default function Product () {
             <FlatList
                 data={produtos}
                 renderItem={({item}) => (
-                    <View style={styles.card}>
-                        <Text>{item.nome}: R$ {item.valor.toFixed(2)}</Text>
-                        <Image source={{uri: item.imagem}} style={{ width: 100, height: 100, margin: 20, alignItems: 'center', justifyContent: 'center' }}/>
-                    </View>
+                    <CardProduct
+                        id = {item.id}
+                        nome = {item.nome}
+                        valor = {item.valor}
+                        imagem = {item.imagem}
+                    />
                 )}
                 keyExtractor={item => item.id}
             />
