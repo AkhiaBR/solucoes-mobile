@@ -17,6 +17,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Count from './Screens/Count.js';
 import Entypo from '@expo/vector-icons/Entypo'; // importa icone
 
+import Product from './Screens/Product.js';
+
 function BottomTab () {
   const Tab = createBottomTabNavigator();
 
@@ -47,6 +49,12 @@ function BottomTab () {
           <Entypo name="count" size={24} color="black"/>
       }}
       />
+      <Tab.Screen name='Produto' component={Product}
+      options={{
+        tabBarIcon: () =>
+          <Entypo name="product" size={24} color="black"/>
+      }}
+      />
     </Tab.Navigator>
   )
 }
@@ -54,7 +62,7 @@ function BottomTab () {
 export default function App() {
   const Stack = createStackNavigator();
 
-  return ( // somente um NavigationContainer por projeto
+  return ( // somente um NavigationContainer por projeto      //   <Stack.Screen options={{headerShown:false}} name="Home" component={BottomTab}/> //ativa a BottomTab
     <NavigationContainer> 
       <Stack.Navigator>
         <Stack.Screen name="LOGIN" component={Login}/>
